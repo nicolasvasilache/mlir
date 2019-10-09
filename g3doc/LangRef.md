@@ -43,10 +43,11 @@ even arbitrary user-defined high-level operations including the
 Here's an example of an MLIR module:
 
 ```mlir {.mlir}
+
 // Compute A*B using an implementation of multiply kernel and print the
 // result using a TensorFlow op. The dimensions of A and B are partially
 // known. The shapes are assumed to match.
-func @mul(%A: tensor<100x?xf32>, %B: tensor<?x50xf32>) -> (tensor<100x50xf32>) {
+func @mul(%A: tensor<100x?xf32>, %B: tensor<?x50xf32>) -> (tensor<100x50xf32>) {  
   // Compute the inner dimension of %A using the dim operation.
   %n = dim %A, 1 : tensor<100x?xf32>
 
